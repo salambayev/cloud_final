@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div>
+        <div>
+            <div>
+                <form role="form" method="POST">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label for="Text">Task:</label>
+                        <input name="text" type="text" class="form-control" id="email">
+                    </div>
+                    <br>
+                    <div class="button-group">
+                        <button type="submit" class="btn btn-info">Send</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+    {% for task in tasks %}
+        <div>
+            <h3>{{ task.content }}</h3>
+            <h4>{{ task.state }}</h4>
+            <h5>{{ task.user.username }}</h5>
+        </div>
+    {% endfor %}
+{% endblock content %}

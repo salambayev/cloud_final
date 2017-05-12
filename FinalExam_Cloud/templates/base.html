@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Final Exam</title>
+</head>
+<body>
+    <header>
+        <ul >
+            <li>
+                <a href="{% url 'index' %}">Index</a>
+            </li>
+            <li>
+                <a href="{% url 'login' %}">LogIn</a>
+            </li>
+            <li>
+                <a href="{% url 'register' %}">Register</a>
+            </li>
+            <li>
+                <a href="{% url 'logout' %}">LogOut</a>
+            </li>
+        </ul>
+    </header>
+    <hr>
+    <div>
+    {% block content %}
+
+    {% endblock content %}
+    </div>
+</body>
+</html>
